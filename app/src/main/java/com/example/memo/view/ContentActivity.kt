@@ -50,6 +50,7 @@ class ContentActivity : AppCompatActivity() {
         }
 
     }
+
     override fun onDestroy(){
         DataBase.destroyInstance()
         mViewmodel.memoDb = null
