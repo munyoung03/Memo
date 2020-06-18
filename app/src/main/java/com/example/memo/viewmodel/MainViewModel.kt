@@ -1,5 +1,8 @@
 package com.example.memo.viewmodel
 
+import android.app.Activity
+import android.widget.Toast
+import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.lifecycle.ViewModel
 import com.example.memo.room.DataBase
 import com.example.memo.widget.MemoAdapter
@@ -29,6 +32,7 @@ class MainViewModel : ViewModel() {
     fun btnClick(){
         btn.call()
     }
+
 
 }
 

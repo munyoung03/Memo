@@ -1,7 +1,10 @@
 package com.example.memo.view
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -15,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var mBinding: ActivityMainBinding
     lateinit var mViewModel: MainViewModel
-
+    private lateinit var backPressHandler: onBackPressHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +33,8 @@ class MainActivity : AppCompatActivity() {
 
         mViewModel.load()
 
+        backPressHandler = onBackPressHandler(this@MainActivity)
+
         with(mViewModel) {
             btn.observe(this@MainActivity, Observer {
                 startActivity(com.example.memo.view.AddActivity::class.java)
@@ -37,9 +42,29 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     override fun onDestroy(){
         DataBase.destroyInstance()
         mViewModel.memoDb = null
         super.onDestroy()
+    }
+
+    override fun onBackPressed() {
+        backPressHandler.onBackPressed()
+    }
+
+    inner class onBackPressHandler(var activity : Activity){
+        private var backPressHandler: Long = 0
+
+        fun onBackPressed(){
+            if(System.currentTimeMillis() > backPressHandler+2000){
+                backPressHandler = System.currentTimeMillis()
+                Toast.makeText(activity,"한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT).show()
+                return
+            }
+            else{
+                ActivityCompat.finishAffinity(activity)
+            }
+        }
     }
 }

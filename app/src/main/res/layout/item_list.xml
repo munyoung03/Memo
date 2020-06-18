@@ -17,21 +17,25 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginLeft="64dp"
+            android:layout_marginStart="32dp"
             android:text="Title"
             android:textSize="40sp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:ems="6"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/time"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="24dp"
             android:text="time"
             app:layout_constraintBottom_toBottomOf="@+id/title"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/title" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
