@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         DataBase.destroyInstance()
         mViewModel.memoDb = null
         super.onDestroy()
+        finish()
     }
 
     override fun onBackPressed() {
