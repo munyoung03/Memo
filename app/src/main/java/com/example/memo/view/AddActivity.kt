@@ -29,7 +29,7 @@ class AddActivity : AppCompatActivity() {
 
         with(mViewModel) {
             btn.observe(this@AddActivity, Observer {
-                mViewModel.addData()
+                addData()
                 startActivity(MainActivity::class.java)
             })
         }

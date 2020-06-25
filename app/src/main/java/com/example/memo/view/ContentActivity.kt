@@ -37,7 +37,7 @@ class ContentActivity : AppCompatActivity() {
 
         with(mViewmodel) {
             btn_del.observe(this@ContentActivity, Observer {
-                mViewmodel.del(title, time)
+                del(title, time)
                 startActivity(MainActivity::class.java)
             })
         }
