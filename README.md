@@ -12,5 +12,5 @@
 
 
 ## 사용툴/ 언어
-### Kotiln
+### kotlin
 ### AndroidStudio
