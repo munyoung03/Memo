@@ -16,4 +16,4 @@
 ### AndroidStudio
 
 ## [✔]사용
-![Uploading memo.gif…]()
+![memo](https://user-images.githubusercontent.com/54434010/89008324-6c377780-d345-11ea-9b5b-a2ba7cf8bef3.gif)
