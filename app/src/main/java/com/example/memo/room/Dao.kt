@@ -15,7 +15,7 @@ interface Dao {
     @Query("UPDATE memo SET time = :time , title = :title, content = :content WHERE title = :original_title")
     fun update(title: String, time: String, content: String, original_title : String)
 
-    @Query("DELETE  FROM memo WHERE title = :title AND time = :time" )
-    fun delete(title: String, time: String)
+    @Query("DELETE  FROM memo WHERE title = :title AND time = :time AND content = :content" )
+    fun delete(title: String, time: String, content: String)
 
 }

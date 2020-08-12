@@ -21,8 +21,8 @@ class ContentViewModel: ViewModel() {
         contents_id.value = contents
     }
 
-    fun del(title : String, time : String){
-        memoDb?.dao()?.delete(title+"", time+"")
+    fun del(title : String, time : String, contents: String){
+        memoDb?.dao()?.delete(title, time, contents)
         }
 
     fun up(title : String){

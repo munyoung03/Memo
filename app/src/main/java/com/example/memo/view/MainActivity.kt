@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         with(mViewModel) {
             btn.observe(this@MainActivity, Observer {
-                startActivity(com.example.memo.view.AddActivity::class.java)
+                startActivity(AddActivity::class.java)
             })
         }
     }

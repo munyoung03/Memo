@@ -13,7 +13,6 @@ class MainViewModel : ViewModel() {
 
     val btn = SingleLiveEvent<Unit>()
 
-    private var memos = listOf<memo>()
     private val memoList = ArrayList<memo>()
 
     val mAdapter = MemoAdapter()
@@ -24,8 +23,7 @@ class MainViewModel : ViewModel() {
 
     fun load() {
         memoList.clear()
-        memos = memoDb?.dao()?.getAll()!!
-        memoList.addAll(memos)
+        memoList.addAll(memoDb?.dao()?.getAll()!!)
         mAdapter.notifyDataSetChanged()
     }
 
