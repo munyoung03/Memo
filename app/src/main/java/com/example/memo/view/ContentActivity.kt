@@ -30,21 +30,20 @@ class ContentActivity : AppCompatActivity() {
 
         val contents = intent.getStringExtra("content")
         val title = intent.getStringExtra("title")
-        val time = intent.getStringExtra("time")
+        val id = intent.getLongExtra("id", 0)
 
         mViewmodel.init(title, contents)
 
-
         with(mViewmodel) {
             btn_del.observe(this@ContentActivity, Observer {
-                del(title, time, contents)
+                del(id)
                 startActivity(MainActivity::class.java)
             })
         }
 
         with(mViewmodel) {
             btn_up.observe(this@ContentActivity, Observer {
-                up(title)
+                up(id)
                 startActivity(MainActivity::class.java)
             })
         }

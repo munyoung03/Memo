@@ -43,7 +43,7 @@ class MemoAdapter : RecyclerView.Adapter<MemoAdapter.Holder>() {
                 val i = Intent(itemView.context, ContentActivity::class.java)
                 i.putExtra("content", Memo.content)
                 i.putExtra("title", Memo.title)
-                i.putExtra("time", Memo.time)
+                i.putExtra("id", Memo.id)
 
                 itemView.context.startActivity(i)
             }

@@ -21,12 +21,12 @@ class ContentViewModel: ViewModel() {
         contents_id.value = contents
     }
 
-    fun del(title : String, time : String, contents: String){
-        memoDb?.dao()?.delete(title, time, contents)
+    fun del(id : Long){
+        memoDb?.dao()?.delete(id)
         }
 
-    fun up(title : String){
-        memoDb?.dao()?.update(title_id.value.toString(), onlyDate.toString(), contents_id.value.toString(), title)
+    fun up(id : Long){
+        memoDb?.dao()?.update(title_id.value.toString(), onlyDate.toString(), contents_id.value.toString(), id)
     }
 
     fun upbtnClick(){

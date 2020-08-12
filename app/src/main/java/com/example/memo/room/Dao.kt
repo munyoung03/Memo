@@ -12,10 +12,10 @@ interface Dao {
     @Insert
     fun insert(memo: memo)
 
-    @Query("UPDATE memo SET time = :time , title = :title, content = :content WHERE title = :original_title")
-    fun update(title: String, time: String, content: String, original_title : String)
+    @Query("UPDATE memo SET time = :time , title = :title, content = :content WHERE id = :id")
+    fun update(title: String, time: String, content: String, id : Long)
 
-    @Query("DELETE  FROM memo WHERE title = :title AND time = :time AND content = :content" )
-    fun delete(title: String, time: String, content: String)
+    @Query("DELETE  FROM memo WHERE id = :id")
+    fun delete(id : Long)
 
 }
